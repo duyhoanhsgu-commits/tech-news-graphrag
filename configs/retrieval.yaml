@@ -1,0 +1,31 @@
+retrieval:
+  vector:
+    top_k: 20
+    similarity_threshold: 0.7
+    distance_metric: cosine     # cosine | l2 | inner_product
+
+  graph:
+    top_k: 10
+    max_hops: 2
+    relationship_types:
+      - MENTIONS
+      - RELATED_TO
+      - WORKS_FOR
+      - LOCATED_IN
+
+  hybrid:
+    vector_weight: 0.6
+    graph_weight: 0.4
+    fusion_method: rrf           # rrf (Reciprocal Rank Fusion) | weighted
+
+  reranker:
+    enabled: true
+    model: cross-encoder/ms-marco-MiniLM-L-6-v2
+    provider: local              # local | cohere
+    top_k: 5
+    batch_size: 32
+
+  context:
+    max_tokens: 4096
+    include_metadata: true
+    deduplicate: true

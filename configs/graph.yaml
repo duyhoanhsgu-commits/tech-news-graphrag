@@ -1,0 +1,35 @@
+graph:
+  extraction:
+    entity_types:
+      - Person
+      - Organization
+      - Location
+      - Technology
+      - Product
+      - Event
+    max_entities_per_chunk: 20
+    batch_size: 16
+    confidence_threshold: 0.7
+
+  resolution:
+    fuzzy_threshold: 0.85       # string similarity for entity matching
+    embedding_threshold: 0.92   # cosine similarity for semantic dedup
+
+  schema:
+    node_labels:
+      - Article
+      - Chunk
+      - Entity
+    relationship_types:
+      - MENTIONS           # (Chunk)-[:MENTIONS]->(Entity)
+      - RELATED_TO         # (Entity)-[:RELATED_TO]->(Entity)
+      - PART_OF            # (Chunk)-[:PART_OF]->(Article)
+      - CO_OCCURS_WITH     # (Entity)-[:CO_OCCURS_WITH]->(Entity)
+
+  indexes:
+    - label: Entity
+      property: name
+    - label: Entity
+      property: type
+    - label: Article
+      property: article_id

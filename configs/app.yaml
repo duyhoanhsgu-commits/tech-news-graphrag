@@ -1,0 +1,16 @@
+app:
+  name: tech-news-graphrag
+  version: "0.1.0"
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  workers: 4
+
+  cors:
+    allow_origins: ["*"]
+    allow_methods: ["*"]
+    allow_headers: ["*"]
+
+  rate_limit:
+    enabled: true
+    requests_per_minute: 60

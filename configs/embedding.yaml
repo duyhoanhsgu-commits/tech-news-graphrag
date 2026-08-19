@@ -1,0 +1,11 @@
+embedding:
+  provider: openai          # openai | huggingface | sentence-transformers
+  model: text-embedding-3-small
+  dimension: 1536
+  batch_size: 512
+  max_retries: 3
+  timeout_seconds: 30
+
+  # HuggingFace / sentence-transformers alternative
+  hf_model: BAAI/bge-small-en-v1.5
+  device: cpu               # cpu | cuda | mps

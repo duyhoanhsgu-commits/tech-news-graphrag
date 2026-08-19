@@ -1,0 +1,50 @@
+# ============================================================
+# Pinned requirements — generated from pyproject.toml
+# Install with:  pip install -r requirements.txt
+# For dev extras: pip install -e ".[dev]"
+# For eval extras: pip install -e ".[eval]"
+# ============================================================
+
+# --- Runtime (mirrors pyproject.toml [project.dependencies]) ---
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+pydantic-settings>=2.2.0
+
+asyncpg>=0.29.0
+sqlalchemy[asyncio]>=2.0.30
+alembic>=1.13.1
+pgvector>=0.3.0
+psycopg2-binary>=2.9.9
+
+neo4j>=5.20.0
+
+openai>=1.30.0
+sentence-transformers>=3.0.0
+tiktoken>=0.7.0
+
+anthropic>=0.28.0
+google-generativeai>=0.7.0
+
+datasets>=2.19.0
+httpx>=0.27.0
+aiofiles>=23.2.1
+beautifulsoup4>=4.12.3
+lxml>=5.2.1
+
+langchain-text-splitters>=0.2.0
+nltk>=3.8.1
+
+cohere>=5.5.0
+rank-bm25>=0.2.2
+
+structlog>=24.1.0
+python-json-logger>=2.0.7
+prometheus-client>=0.20.0
+
+python-dotenv>=1.0.1
+pyyaml>=6.0.1
+tenacity>=8.3.0
+rich>=13.7.1
+typer>=0.12.3
+tqdm>=4.66.4
