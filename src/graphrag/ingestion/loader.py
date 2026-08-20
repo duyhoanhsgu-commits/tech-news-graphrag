@@ -33,11 +33,13 @@ class ArticleLoader:
         for i, row in enumerate(ds):
             if limit and i >= limit:
                 break
+            title = row.get("title") or row.get("companyName") or row.get("headline") or ""
+            content = row.get("text") or row.get("content") or row.get("description") or row.get("article") or ""
             yield Article(
                 article_id=str(row.get("id", i)),
-                title=row.get("title", ""),
-                content=row.get("text", row.get("content", "")),
-                url=row.get("url"),
-                source=row.get("domain"),
-                published_at=row.get("date"),
+                title=title,
+                content=content,
+                url=row.get("url") or row.get("link"),
+                source=row.get("domain") or row.get("source"),
+                published_at=row.get("date") or row.get("published_at"),
             )
